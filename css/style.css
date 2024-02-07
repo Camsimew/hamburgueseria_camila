@@ -157,7 +157,7 @@ header .menu .activo {
 
 /* final header */
 
-/* inicio del foote*/
+/* inicio del footer*/
 
 
 footer {
@@ -174,7 +174,7 @@ footer a {
     color: white;
     text-decoration: none;
 
-    & hover {
+    &:hover {
         color: var(--colorprincipal)
     }
 
@@ -197,37 +197,34 @@ footer a {
 
         }
 
-        footer {
-            text-align: left;
+    }
+
+    footer {
+        text-align: left;
 
 
-        }
+    }
+}
 
-        @media(min-width: 62.75rem) {
-            header .hamburguesa {
-                display: none;
-            }
+@media(min-width: 62.75rem) {
+    header .hamburguesa {
+        display: none;
+    }
 
-            header nav .container {
-                flex-wrap: nowrap;
-
-
-            }
-
-            header .menu {
-                padding: 0.5rem 0;
-                display: flex;
-                justify-content: end;
-            }
-
-            header .menu a {
-                border: 0px;
-                padding: 1.25rem 0rem 1.25rem 2.5rem;
-            }
-        }
+    header nav .container {
+        flex-wrap: nowrap;
 
 
     }
 
+    header .menu {
+        padding: 0.5rem 0;
+        display: flex;
+        justify-content: end;
+    }
 
+    header .menu a {
+        border: 0px;
+        padding: 1.25rem 0rem 1.25rem 2.5rem;
+    }
 }
