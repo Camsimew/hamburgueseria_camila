@@ -64,6 +64,57 @@ header .nav-top .container {
     }
 }
 
+
+header .menu {
+    width: 100%;
+}
+
+header .hamburguesa div {
+    border-top: 2px solid #aaa;
+    margin-bottom: 0.625rem;
+}
+
+header .menu a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    padding: 1.25rem;
+    text-align: center;
+    border-bottom: 1px solid #aaa;
+    color: #aaa;
+}
+
+
+header .menu li:last-child a {
+    border-bottom: 0;
+}
+
+header .menu .activo {
+    color: var(--colorprincipal);
+}
+
+
+main section {
+    padding: 2.125rem 0.625rem;
+}
+
+main .grid {
+    display: grid;
+    gap: var(--margingrid);
+    grid-template-columns: 1fr;
+}
+
+main section h2 {
+    font-family: var(--fuentetitulos);
+    font-size: 2rem;
+    text-align: center;
+
+    & span {
+        color: var(--colorprincipal);
+    }
+}
+
+
 header nav .container {
     display: flex;
     flex-wrap: wrap;
@@ -113,9 +164,8 @@ header .menu .activo {
     color: var(--colorprincipal);
 }
 
-/* final header */
 
-/* inicio footer */
+/* final header */
 
 footer {
     background-color: var(--colorsecundario);
@@ -148,90 +198,32 @@ footer a {
 
 /* fin footer */
 
-/* inicio  hero */
 
-.hero {
-    background-image: url('../images/fondo.jpg');
-    background-size: cover;
-    background-position: center center;
-    background-color: #777;
-    background-blend-mode: multiply;
+.blog {
+    margin-bottom: 12.5rem;
 }
 
-.hero .container {
-    padding: 130px 10px;
-}
-
-.hero h1 {
-    font-family: var(--fuentetitulos);
-    font-size: 2.25rem;
-    color: white;
-}
-
-.hero h2 {
-    color: var(--colorprincipal);
-    font-size: 1.25rem;
-    margin: var(--margingrid) 0;
-}
-
-.hero p {
-    color: white;
-}
-
-.boton {
-    display: inline-block;
-    background-color: var(--colorprincipal);
-    padding: 1.15rem;
-    margin: var(--margingrid) 0;
-    color: white;
-    text-decoration: none;
-    border: 1px solid var(--colorprincipal);
-
-    &:hover {
-        background-color: transparent;
-        color: var(--colorprincipal);
-
-        & i {
-            transform: translateX(5px);
-            transition: transform 0.5s;
-        }
-    }
-}
-
-.hero .social {
+section.blog.flex {
+    margin-top: 1.875rem;
     display: flex;
-    justify-content: space-between;
-    width: 10rem;
-
-    & a {
-        font-size: 2em;
-        color: white;
-        text-decoration: none;
-    }
-}
-
-/* fin hero */
-
-/* inicio our services */
-
-main section {
-    padding: 2.125rem 0.625rem;
-}
-
-main .grid {
-    display: grid;
+    flex-direction: column;
     gap: var(--margingrid);
-    grid-template-columns: 1fr;
 }
 
-main section h2 {
-    font-family: var(--fuentetitulos);
-    font-size: 2rem;
-    text-align: center;
+& h2 {
+    font-weight: 700;
+    font-size: 120%;
+}
 
-    & span {
-        color: var(--colorprincipal);
-    }
+& h4 {
+    color: var(--colorprincipal);
+    font-size: 110%;
+    margin: var(--margingrid) 0;
+}
+
+& p {
+    color: #666;
+    line-height: 1.20;
 }
 
 main section .underline {
@@ -270,6 +262,12 @@ main .grid article {
         font-size: 115%;
     }
 
+    & h4 {
+        line-height: bold;
+        color: var(--colorprincipal);
+
+    }
+
     & p {
         color: #666;
         font-size: 95%;
@@ -284,75 +282,23 @@ main .grid article {
     }
 }
 
-/* final our services */
-/* inicio about us */
-
-#aboutus {
-    margin-bottom: 12.5rem;
-}
-
-section#aboutus .flex {
-    margin-top: 1.875rem;
-    display: flex;
-    flex-direction: column;
-    gap: var(--margingrid);
-
-    & h3 {
-        font-weight: 700;
-        font-size: 120%;
-    }
-
-    & h4 {
-        color: var(--colorprincipal);
-        font-size: 110%;
-        margin: var(--margingrid) 0;
-    }
-
-    & p {
-        color: #666;
-        line-height: 1.20;
-    }
-}
-
-section#aboutus .imagen {
-    border: 3px solid var(--colorprincipal);
-    transform: rotateZ(10deg);
-    width: 95%;
-    transition: 1s;
-}
-
-section#aboutus .imagen .marco {
-    transform: rotateZ(-10deg);
-    transition: 1s;
-}
-
-section#aboutus figure:hover :is(.imagen, .marco) {
-    transform: rotateZ(0deg);
-}
-
-
-/* final about us */
-/* inicio mequeries */
+/* inicio queries */
 
 @media(min-width: 37.5rem) {
     main .grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 
     main .grid article:last-child {
-        grid-column: 1/3;
+        grid-column: 3/3;
     }
 
-    main .grid article {
-        padding: 1.25rem;
-        border-bottom: 0;
-        border-left: 1px solid #aaa;
-    }
-
-    section#aboutus .flex {
+    section#blog .flex {
         flex-direction: row;
     }
 }
+
+
 
 @media(min-width: 48rem) {
     header .nav-top .container {
@@ -362,48 +308,11 @@ section#aboutus figure:hover :is(.imagen, .marco) {
             display: inline;
 
         }
-
-        & a {
-            color: white;
-            text-decoration: none;
-            font-size: 110%;
-        }
     }
 
-    footer {
-        text-align: left;
-    }
-
-    main .grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    main .grid article:last-child {
-        grid-column: auto;
-    }
-
-
-}
-
-@media(min-width: 62.75rem) {
-    header .hamburguesa {
-        display: none;
-    }
-
-    header nav .container {
-        flex-wrap: nowrap;
-    }
-
-    header .menu {
-        padding: 0.5rem 0;
-        display: flex;
-        justify-content: end;
-    }
-
-    header .menu a {
-        border: 0px;
-        padding: 1.25rem 0rem 1.25rem 2.5rem;
+    & a {
+        color: white;
+        text-decoration: none;
+        font-size: 110%;
     }
 }
-
-/* fin mequeries */
