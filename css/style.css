@@ -227,7 +227,7 @@ main .grid {
     grid-template-columns: 1fr;
 }
 
-main section h2 span {
+main section h2 {
     font-family: var(--fuentetitulos);
     font-size: 2rem;
     text-align: center;
@@ -253,13 +253,12 @@ main section .underline {
     }
 }
 
-main.grid article {
+main .grid article {
     padding: 1.25rem 0;
     border-bottom: 1px solid #aaa;
 
     & i {
         color: var(--colorprincipal);
-        border: 1px solid var(--colorprincipal);
     }
 
     & div i {
@@ -282,25 +281,82 @@ main.grid article {
 
     }
 
+    & a {
+        color: var(--colorprincipal);
+        text-decoration: none;
+        font-weight: 700;
+
+
+    }
+
 }
 
-& a {
-    color: var(--colorprincipal);
-    text-decoration: none;
-    font-weight: 700;
 
-
-}
 
 
 
 /* final our services */
+
+/* inicio about us */
+
+#aboutus {
+    margin-bottom: 200px;
+
+}
+
+section#aboutus .flex {
+    margin-top: 1.875rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--margingrid);
+
+    & h3 {
+        font-weight: 700;
+        font-size: 120;
+
+    }
+
+    & h4 {
+        color: var(--colorprincipal);
+        font-size: 110%;
+        margin: var(--margingrid) 0;
+    }
+
+    & p {
+        color: #666;
+        line-height: 1.20;
+
+    }
+
+}
+
+section#aboutus .imagen {
+    border: 3px solid var(--colorprincipal);
+    transform: rotateZ(10deg);
+    width: 95%;
+
+}
+
+section#aboutus .imagen .marco {
+    transform: rotateZ(-10deg);
+    transition: 1s;
+
+}
+
+section#aboutus figure:hover :is(.imagen, .marco) {
+    transform: rotateZ(0deg);
+
+
+}
+
+
+/* final abput us*/
 /* inicio mequeries */
 
 
 @media(min-width: 37.5rem) {
     main .grid {
-        grid-template-columns: repeat (2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
 
     }
 
@@ -334,11 +390,11 @@ main.grid article {
             text-decoration: none;
             font-size: 110%;
         }
+    }
 
-        main .grid {
-            grid-template-columns: repeat (3, 1fr);
+    main .grid {
+        grid-template-columns: repeat(3, 1fr);
 
-        }
     }
 
     main .grid article :last-child {
