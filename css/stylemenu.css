@@ -31,6 +31,8 @@ img {
     display: block;
 }
 
+
+
 .container {
     max-width: var(--anchomaximo);
     margin: 0 auto;
@@ -38,11 +40,11 @@ img {
 }
 
 
-
-
 body {
     font-family: var(--fuenteprincipal);
     font-size: var(--fontsize);
+    background-color: #21242e;
+
 }
 
 /* inicio header */
@@ -152,7 +154,7 @@ footer a {
 /* fin footer */
 
 
-/* inicio blog */
+/* inicio menu */
 
 main section {
     padding: 2.125rem 0.625rem;
@@ -162,12 +164,15 @@ main .grid {
     display: grid;
     gap: var(--margingrid);
     grid-template-columns: 1fr;
+    flex-wrap: wrap;
+    position: center;
 }
 
-main section h2 {
+.container h2 {
     font-family: var(--fuentetitulos);
     font-size: 2rem;
-    text-align: center;
+    color: white;
+    position: center;
 
     & span {
         color: var(--colorprincipal);
@@ -187,6 +192,9 @@ main section .underline {
         position: absolute;
         width: 100%;
         top: -2px;
+        gap: 10px;
+        display: flex;
+        text-align: left;
     }
 }
 
@@ -195,18 +203,31 @@ main section .underline {
     flex-wrap: wrap;
 }
 
-.item {
-    background-color: #f0f0f0;
-    padding: 20px;
-}
 
 ul {
     list-style: none;
-    padding: 0;
+    padding-bottom: 8%;
+    color: #ffff;
+    font-family: var(--fuenteprincipal);
+
 }
 
 li {
     margin-bottom: 10px;
+    padding: 10px;
+    margin: 5px;
+    background-color: var(--colorsecundario);
+    transition: background-color 0.3s ease;
+}
+
+.li.main {
+    color: var(--colorsecundario);
+
+
+}
+
+li:hover {
+    background-color: var(--colorprincipal);
 }
 
 .item2 {
@@ -232,15 +253,6 @@ li {
 }
 
 
-.item2.image {
-    width: 100%;
-    /* Cambiar el tamaño de la imagen */
-    display: flex;
-    margin-right: 0;
-    /* Alinea la imagen a la izquierda */
-}
-
-
 
 section#menu .flex {
     margin-top: 1.875rem;
@@ -250,34 +262,41 @@ section#menu .flex {
 
 }
 
+& h2 {
+    font-weight: 700;
+    font-size: 120%;
+    color: #ffff;
+    text-align: center;
+}
+
 & h3 {
     font-weight: 700;
     font-size: 120%;
+    color: #ffff;
+
+
 }
 
 & h4 {
     color: var(--colorprincipal);
-    font-size: 110%;
+    font-size: 100%;
     margin: var(--margingrid) 0;
+    color: #ffff;
+    font-family: var(--fuenteprincipal);
+    line-height: 1.5;
 }
-
-& p {
-    color: #666;
-    line-height: 1.20;
-}
-
-
 
 
 & h5 {
     margin: var(--margingrid) 0;
     font-weight: 700;
     font-size: 115%;
-    box-align: wrap
+    box-align: wrap;
+    color: #ffff;
 }
 
 & p {
-    color: #666;
+    color: #ffff;
     font-size: 95%;
     line-height: 1.2;
     margin-bottom: var(--margingrid);
@@ -297,8 +316,6 @@ section#menu .flex {
     margin: 30px 60px;
     height: 30%;
     padding: 20px;
-    border: 2px solid black;
-    border-radius: 50%;
 
 }
 
@@ -308,22 +325,28 @@ section#menu .flex {
     margin: 30px 60px
 }
 
-
-.sidebar.li.figure {
-    display: block;
-    background-color: lightblue;
-    padding: 5px 15px;
-    text-decoration: none;
-    color: white;
-    text-align: center;
-    border-radius: 20px;
-    width: 35%;
-    transition: background-color 1s;
+.menuflex {
+    display: flex;
+    margin: var(--margingrid);
+    gap: 2%;
 }
 
 
-.menuflex {
-    display: flex;
+.menuflex>figure {
+    width: 48%;
+    padding-left: 10%;
+    padding-right: 2%;
+    margin-top: 1%;
+
+}
+
+
+
+.menuflex>div {
+    max-width: 100%;
+    width: 100%;
+    margin-top: -1%;
+
 }
 
 

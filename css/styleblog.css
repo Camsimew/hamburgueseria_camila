@@ -31,89 +31,55 @@ img {
     display: block;
 }
 
-.container {
-    max-width: var(--anchomaximo);
-    margin: 0 auto;
-    padding: 0 0.625rem;
-}
-
-
-.cuadro-naranja {
-    position: absolute;
-    display: flex;
-    top: 35.82%;
-    left: 16.1%;
-    transform: translate(-50%, -50%);
-    width: 55.5px;
-    height: 60px;
-    background-color: var(--colorprincipal);
-    color: white;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    opacity: 78%;
-}
-
-.cuadro-naranja p {
-    font-weight: bold;
-    color: white;
-    width: 100%;
-    text-align: center;
-}
-
-.cuadro-naranja2 {
-    position: absolute;
-    top: 35.82%;
-    left: 41.30%;
-    transform: translate(-50%, -50%);
-    width: 55.5px;
-    height: 60px;
-    background-color: var(--colorprincipal);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    opacity: 78%;
-}
-
-.cuadro-naranja2 p {
-    font-weight: bold;
-    color: white;
-    width: 100%;
-    text-align: center;
-}
-
-
-
-.cuadro-naranja3 {
-    position: absolute;
-    top: 35.82%;
-    left: 66.25%;
-    transform: translate(-50%, -50%);
-    width: 55.5px;
-    height: 60px;
-    background-color: var(--colorprincipal);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    opacity: 78%;
-}
-
-.cuadro-naranja3 p {
-    font-weight: bold;
-    color: white;
-    width: 100%;
-    text-align: center;
-}
-
-
 
 body {
     font-family: var(--fuenteprincipal);
     font-size: var(--fontsize);
+
+}
+
+.container {
+    max-width: var(--anchomaximo);
+    margin: 0 auto;
+    padding: 0 0.625rem;
+    position: relative;
+}
+
+
+
+.grid .square {
+    display: flex;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 55.5px;
+    height: 60px;
+    background-color: var(--colorprincipal);
+    color: white;
+    border-style: solid;
+    font-size: 15px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 78%;
+    line-height: 1.47;
+    letter-spacing: 1.7px;
+
+}
+
+#square1 {
+    top: 19.67%;
+    left: 71.59%;
+}
+
+#square2 {
+    top: 19.67%;
+    left: 38.47%;
+}
+
+#square3 {
+    top: 19.67%;
+    left: 5.2%;
 }
 
 /* inicio header */
@@ -233,6 +199,7 @@ main .grid {
     display: grid;
     gap: var(--margingrid);
     grid-template-columns: 1fr;
+    gap: 3%
 }
 
 main section h2 {
@@ -263,7 +230,6 @@ main section .underline {
 
 main .grid article {
     padding: 1.25rem 0;
-    border-bottom: 1px solid #aaa;
 
     & i {
         color: var(--colorprincipal);
@@ -273,7 +239,6 @@ main .grid article {
 
 
     & div i {
-        border: 1px solid var(--colorprincipal);
         padding: 0.8rem;
         font-size: 150%;
         text-align: var(--margingrid);
@@ -291,6 +256,7 @@ main .grid article {
         margin: var(--margingrid);
         font-weight: 700;
         font-size: 115%;
+
     }
 
     & p {
@@ -374,42 +340,30 @@ section#blog .flex {
         grid-column: auto;
     }
 
-
-
-}
-
-@media(min-width: 600px) {
-    header .hamburguesa {
-        display: none;
-    }
-
-    header nav .container {
-        flex-wrap: nowrap;
-    }
-
-    header .menu {
-        padding: 0.5rem 0;
+    .grid .square {
         display: flex;
-        justify-content: end;
+        position: absolute;
+        width: 10%;
+        height: 6%;
+        transform: translate(-50%, -50%);
+        line-height: 1.47;
+        letter-spacing: 1.7px;
+
     }
 
-    header .menu a {
-        border: 0px;
-        padding: 1.25rem 0rem 1.25rem 2.5rem;
+    #square1 {
+        top: 60.6%;
+        left: 7.30%;
     }
 
-    main .grid {
-        grid-template-columns: repeat(2, 1fr);
+    #square2 {
+        top: 10.40%;
+        left: 56.8%;
     }
 
-    main .grid article:last-child {
-        grid-column: auto;
-    }
-
-    main .grid article {
-        padding: 1.25rem;
-        border-bottom: 0;
-        grid-template-columns: (repeat 2 1fr);
+    #square3 {
+        top: 10.40%;
+        left: 7.4%;
     }
 
 
@@ -445,6 +399,7 @@ section#blog .flex {
 
 }
 
+
 @media(min-width: 1004px) {
     header .hamburguesa {
         display: none;
@@ -469,6 +424,42 @@ section#blog .flex {
         grid-template-columns: repeat(3, 1fr);
     }
 
+    #square1 {
+        top: 19.67%;
+        left: 71.59%;
+    }
+
+    #square2 {
+        top: 19.67%;
+        left: 38.47%;
+    }
+
+    #square3 {
+        top: 19.67%;
+        left: 5.2%;
+    }
+
+
+    .grid .square {
+        width: 55.5px;
+        height: 60px;
+
+    }
+
+    #square1 {
+        top: 18.9%;
+        left: 70.8%;
+    }
+
+    #square2 {
+        top: 18.9%;
+        left: 37.1%;
+    }
+
+    #square3 {
+        top: 18.9%;
+        left: 3.4%;
+    }
 
 }
 
